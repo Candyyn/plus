@@ -3,6 +3,8 @@ const serverStore = useServerStore()
 
 const info = computed(() => serverStore.info)
 
+console.log(serverStore.testServerURL(serverStore.url))
+
 await serverStore.testServerURL(serverStore.url)
 </script>
 

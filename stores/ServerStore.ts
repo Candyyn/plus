@@ -20,7 +20,8 @@ export const useServerStore = defineStore('server', {
     url(): string {
       const config = useRuntimeConfig()
       console.log("Accesing server url")
-      console.log(config)
+      console.log(config.public)
+      console.log(config.internalServerUrl)
 
       if (import.meta.server && config.internalServerUrl)
         return config.internalServerUrl
@@ -33,7 +34,8 @@ export const useServerStore = defineStore('server', {
     public_url(): string {
       const config = useRuntimeConfig()
       console.log("Accesing public URL")
-      console.log(config)
+      console.log(config.public)
+      console.log(config.internalServerUrl)
 
       if (config.public.serverUrl) return config.public.serverUrl
 
