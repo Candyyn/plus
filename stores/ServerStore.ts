@@ -44,6 +44,7 @@ export const useServerStore = defineStore('server', {
   },
   actions: {
     async testServerURL(url: string) {
+      console.log("running test on " + url)
       const uri = new URL(url).href.replace(/\/+$/, '')
 
       const { data, error } = await useFetch<PublicSystemInfo>(
