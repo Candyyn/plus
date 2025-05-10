@@ -3,7 +3,7 @@ import type { UserDto } from '@jellyfin/sdk/lib/generated-client'
 export default defineNuxtRouteMiddleware(() => {
   callOnce(async () => {
     const serverStore = useServerStore()
-    const server = useCookie('server')
+    //const server = useCookie('server')
 
     if (window?.wails) {
       await useNativeStorage()
@@ -12,7 +12,7 @@ export default defineNuxtRouteMiddleware(() => {
     console.log(server.value)
     console.log(serverStore.url);
     console.log(!server.value && !serverStore.url)
-    if (!server.value && !serverStore.url) return setup()
+    if (!serverStore.url) return setup()
 
     const authentication = useCookie('authentication')
     const user = useCookie('user')
