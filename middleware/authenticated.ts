@@ -11,6 +11,7 @@ export default defineNuxtRouteMiddleware(() => {
     console.log("MIDDLEWARE");
     console.log(server.value)
     console.log(serverStore.url);
+    console.log(!server.value && !serverStore.url)
     if (!server.value && !serverStore.url) return setup()
 
     const authentication = useCookie('authentication')
