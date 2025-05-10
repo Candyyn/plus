@@ -22,6 +22,7 @@ COPY --chown=bun:bun --from=install /temp/node_modules node_modules
 COPY --chown=bun:bun --from=prerelease /usr/src/app/.output .
 USER bun
 ENV NUXT_HOST 0.0.0.0
-EXPOSE 3000
+ENV PORT 3050
+EXPOSE 3050
 ENTRYPOINT [ "bun", "run", "server/index.mjs" ]
 
