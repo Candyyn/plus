@@ -45,7 +45,13 @@ const load = ref({
 //     }
 //   ]
 // };
-if (!serverStore._url) router.replace({ path: '/setup' })
+if (!serverStore._url) {
+  await serverStore.testServerURL(serverStore.url)
+  if(!serverStore._url) {
+
+    router.replace({ path: '/setup' })
+  }
+}
 
 onMounted(() => {
   animate([
