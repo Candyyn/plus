@@ -8,6 +8,7 @@ export default defineNuxtRouteMiddleware(() => {
     if (window?.wails) {
       await useNativeStorage()
     }
+    console.log("MIDDLEWARE");
     console.log(server.value)
     console.log(serverStore.url);
     if (!server.value && !serverStore.url) return setup()
